@@ -101,3 +101,48 @@ console.log('\nPart 2 Average age of the people array:');
 console.log(average_age);
 
 //Part 3
+
+//Take an object and increment its age field
+function incrementAge(object){
+  if(!object.age){
+    object.age = 0;
+    object.updated_at = new Date();
+    return;
+  }
+  object.age++;
+  object.updated_at = new Date();
+}
+
+function incrementAgeAndCopy(object){
+    let copy = Object.assign({}, object);
+    if(!copy.age){
+      copy.age = 0;
+      copy.updated_at = new Date();
+      return copy;
+    }
+    copy.age++;
+    copy.updated_at = new Date();
+    return copy;
+  }
+
+//Test increment Function
+let object1 = {name: 'big P', age: 2};
+let object2 = {name: 'Daniel'};
+console.log('Part 3 Increment Test');
+incrementAge(object1);
+incrementAge(object2);
+console.log(object1);
+console.log(object2);
+console.log();
+
+//Test increment and copy
+console.log('Part 3 Increment and Copy Test');
+let object3 = {name: 'big P', age: 2};
+let object4 = {name: 'Daniel'};
+let new_object = incrementAgeAndCopy(object3);
+console.log(object3);
+console.log(new_object);
+
+let new_object2 = incrementAgeAndCopy(object4);
+console.log(object4);
+console.log(new_object2);
