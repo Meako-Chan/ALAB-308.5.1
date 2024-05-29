@@ -47,13 +47,19 @@ function printNumbers(n, curr = 1) {
     return;
 }
 
-let array = [4,8,5,7];
+let array = [4,8,5,7,6];
 let strings = ['food', 'drink', 'chicken'];
-// console.log(sum(array));
-// console.log(average(array));
-// console.log(longest_string(strings));
-// console.log(stringsLongerThan(strings, 5));
-// printNumbers(5);
+console.log('Part 1 Sum Function Test:');
+console.log('The sum of the array: ' + sum(array) + '\n');
+console.log('Part 1 Average Function Test:');
+console.log('The average of the numbers: ' + average(array) + '\n');
+console.log('Part 1 Longest String Test:');
+console.log('The longest string in the array: ' + longest_string(strings) + '\n');
+console.log('Part 1 Longer Than String Test:');
+console.log('The strings in the array longer than 4: ' + stringsLongerThan(strings, 4) + '\n');
+console.log('Part 1 Print 1 to n:');
+printNumbers(5);
+console.log('');
 
 //Part 2
 let people = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
@@ -64,11 +70,13 @@ let people = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
 
 //Sort Array by age
 people.sort((a,b) => a.age - b.age);
-// console.log(people);
+console.log('Part 2 People sorted by age: ');
+console.log(people);
 
 //Filter array to remove entries with an age greater than 50
 younger_than_50 = people.filter(person => person.age > 50);
-// console.log(younger_than_50);
+console.log('\nPart 2 People filtered by age 50: ');
+console.log(younger_than_50);
 
 //Map the array to change occupation key to job and increment every age by 1.
 let mapped = people.map(person =>{
@@ -79,12 +87,17 @@ let mapped = people.map(person =>{
         age: String(Number(person.age) + 1)
     };
 });
-// console.log(mapped);
+console.log('\nPart 2 occupation change and age increment: ')
+console.log(mapped);
 
 //Use reduce method to calculate sum of ages
 let totalAge = people.reduce((accumulator, item) => {
     return accumulator += Number(item.age);
 }, 0)
+console.log('\nPart 2 Total age of the people array:');
 console.log(totalAge)
 average_age = totalAge / people.length;
+console.log('\nPart 2 Average age of the people array:');
 console.log(average_age);
+
+//Part 3
